@@ -1,0 +1,15 @@
+<h1> Name: <%=@guest.name%> </h1>
+<h3> Occupation: <%=@guest.occupation%> </h3>
+<h3> Average Rating: <%= @guest.appearances.average(:rating) %> </h3>
+
+Episodes On:
+<ul>
+<% @guest.appearances.each do |g| %>
+    <li>
+   Episode:  <%= g.episode.number%>,  
+   Aired on: <%= link_to g.episode.date, episode_path(g.episode)%>, 
+   Rating: <%= g.rating%>
+    </li>
+<% end.sort() %>
+
+</ul
