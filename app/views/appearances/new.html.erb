@@ -1,0 +1,22 @@
+<h1>Log a New Appearance</h1>
+
+<% if @error %>
+<% @error.each do |e| %>
+    <%= e %>
+<%end%>
+<%end%>
+<br>
+
+<%= form_for @appearance do |f| %>
+    <h3>Guest</h3>
+    <%=f.collection_select(:guest_id, @guest, :id, :name)%>
+
+    <h3>Episode</h3>
+    <%=f.collection_select(:episode_id, @episode, :id, :number)%>
+
+    <h3>Rating: 1 to 5 </h3>
+    <%=f.text_field :rating%>
+    <br>
+    <br>
+    <%= f.submit %>
+<%end%>
