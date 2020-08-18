@@ -1,0 +1,15 @@
+<h1>New Appearance Form</h1>
+
+
+<%= form_for @appearance do |f| %>
+    <%=f.label :guest_id%>
+    <%=f.collection_select :guest_id, Guest.all, :id, :name, prompt: true%><br>
+    
+    <%=f.label :episode_id%>
+    <%=f.collection_select :episode_id, Episode.all, :id, :number, prompt: true%><br>
+    
+    <%=f.label :rating%>
+    <%=f.text_field :rating%><br>
+     <%=f.submit%>
+<%end%>
+
