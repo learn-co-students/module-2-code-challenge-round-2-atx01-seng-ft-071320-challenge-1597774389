@@ -1,0 +1,15 @@
+<h3>Yet another show page</h3>
+<%= @guest.name %>
+
+<% @guest.episodes.each do |episode|%>
+ <h4>Episode:</h4>
+  <%=link_to episode.date, episode_path(episode)%>
+  
+  <h4>Apperance Rating:</h4>
+  <% episode.apperances.each do |apperance|%>
+    #well this was tricky...if only more time
+    <%if apperance.guest == @guest%> 
+    <%= link_to apperance.rating %>
+<%end%>
+<%end%>
+<%end%>

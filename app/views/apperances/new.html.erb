@@ -1,0 +1,15 @@
+<%= form_for @apperance do |f| %>
+  <%= f.collection_select :episode_id, Episode.all, :id, :number%>
+  <%= f.collection_select :guest_id, Guest.all, :id, :name%>
+    
+  <%=f.label 'rating'%>
+  <%=f.text_field :rating%>
+
+  <%= f.submit%>
+  <%end%>
+    #still needs tweaking 
+  <%if @apperance.errors%>
+    <%@apperance.errors.full_messages.each do |msg|%>
+    <%= msg%>
+    <%end%>
+    <%end%>
