@@ -1,0 +1,9 @@
+<h2><%= @episode.number %></h2>
+
+<h2><%= @episode.date %></h2>
+
+<% @episode.appearances.each do |appearance| %>
+    <li>
+    <%= appearance.guest_id %>
+    </li>
+<% end %>
